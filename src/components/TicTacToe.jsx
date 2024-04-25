@@ -1,13 +1,15 @@
 import {useState} from "react";
 import Board from "./Board";
 
-function TicTacToe() {
+const PLAYER_X = "X";
+const PLAYER_O = "O";
 
-    const PLAYER_X = "X";
-    const PLAYER_O = "O";
+
+function TicTacToe() {
 
     const [tiles, setTiles] = useState(Array(9).fill(null));
     const [player, setPlayer] = useState(PLAYER_O);
+    const [strikeClass, setStrikeClass] = useState("strike-row-1");
 
     const handleTileClick = (index) => {
         if (tiles[index] !== null) {
@@ -27,7 +29,12 @@ function TicTacToe() {
     return (
         <div>
             <h1>Tic Tac Toe</h1>
-            <Board player={player} tiles={tiles} onTileClick={handleTileClick}/>
+            <Board
+                player={player}
+                tiles={tiles}
+                onTileClick={handleTileClick}
+                strikeClass={strikeClass}
+            />
         </div>
     );
 }

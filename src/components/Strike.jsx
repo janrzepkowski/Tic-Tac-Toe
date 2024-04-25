@@ -1,5 +1,5 @@
-function Strike() {
-    return <div>Strike</div>;
+function Strike({ strikeClass }) {
+    return <div className={`strike ${strikeClass}`}></div>;
 }
 
 export default Strike;

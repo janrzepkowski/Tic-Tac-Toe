@@ -27,11 +27,11 @@ h1 {
 }
 
 .right-border {
-  border-right: 0.2em solid #149eca;
+  border-right: 0.2em solid #53c1de;
 }
 
 .bottom-border {
-  border-bottom: 0.2em solid #149eca;
+  border-bottom: 0.2em solid #53c1de;
 }
 
 .x-hover:hover::after {
@@ -42,4 +42,52 @@ h1 {
 .o-hover:hover::after {
   content: "O";
   opacity: 0.4;
+}
+
+.strike {
+  position: absolute;
+  background-color: #de7053;
+}
+
+.strike-row-1 {
+  width: 100%;
+  height: 7px;
+  top: 15%;
+}
+.strike-row-2 {
+  width: 100%;
+  height: 7px;
+  top: 48%;
+}
+.strike-row-3 {
+  width: 100%;
+  height: 7px;
+  top: 83%;
+}
+.strike-column-1 {
+  height: 100%;
+  width: 7px;
+  left: 15%;
+}
+.strike-column-2 {
+  height: 100%;
+  width: 7px;
+  left: 48%;
+}
+.strike-column-3 {
+  height: 100%;
+  width: 7px;
+  left: 83%;
+}
+.strike-diagonal-1 {
+  width: 100%;
+  height: 9px;
+  top: 50%;
+  transform: skewY(45deg);
+}
+.strike-diagonal-2 {
+  width: 100%;
+  height: 9px;
+  top: 50%;
+  transform: skewY(-45deg);
 }
