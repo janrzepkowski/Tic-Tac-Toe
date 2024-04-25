@@ -33,3 +33,13 @@ h1 {
 .bottom-border {
   border-bottom: 0.2em solid #149eca;
 }
+
+.x-hover:hover::after {
+  content: "X";
+  opacity: 0.4;
+}
+
+.o-hover:hover::after {
+  content: "O";
+  opacity: 0.4;
+}
