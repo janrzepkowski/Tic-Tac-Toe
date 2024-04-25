@@ -1,5 +1,5 @@
-function Tile({ className }) {
-    return <div className={`tile ${className}`}></div>;
+function Tile({ className, value, onClick }) {
+    return <div onClick={onClick} className={`tile ${className}`}>{value}</div>;
 }
 
 export default Tile;
