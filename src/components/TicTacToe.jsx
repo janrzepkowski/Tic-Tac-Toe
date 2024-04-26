@@ -25,8 +25,15 @@ function checkWinner(tiles, setStrikeClass) {
         const [a, b, c] = combo;
         if (tiles[a] && tiles[a] === tiles[b] && tiles[a] === tiles[c]) {
             setStrikeClass(strikeClass);
+            return tiles[a] === PLAYER_X ? State.xWin : State.oWin;
         }
     }
+
+    if (tiles.every(tile => tile !== null)) {
+        return State.draw;
+    }
+
+    return State.inProgress;
 }
 
 function TicTacToe() {
@@ -34,14 +41,15 @@ function TicTacToe() {
     const [tiles, setTiles] = useState(Array(9).fill(null));
     const [player, setPlayer] = useState(PLAYER_O);
     const [strikeClass, setStrikeClass] = useState("");
-    const [gameState, setGameState] = useState(State.xWin);
+    const [gameState, setGameState] = useState(State.inProgress);
 
     useEffect(() => {
-        checkWinner(tiles, setStrikeClass);
+        const result = checkWinner(tiles, setStrikeClass);
+        setGameState(result);
     }, [tiles]);
 
     const handleTileClick = (index) => {
-        if (tiles[index] !== null) {
+        if (tiles[index] !== null || gameState !== State.inProgress) {
             return;
         }
 
